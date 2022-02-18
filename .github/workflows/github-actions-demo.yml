@@ -1,0 +1,15 @@
+name: Github Actions Demo
+on : [push]
+jobs:
+  Explore-GitHub-Actions-Demo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
+      - run: echo `date`
+      - name: Checkout our repository
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - run: echo "${{ job.status}} "
+      - run: echo "${{ github.repository}}"
+      - run: echo "${{ runner.os}}"
